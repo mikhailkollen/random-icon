@@ -6,15 +6,11 @@ This Angular application generates a random icon from the Font Awesome Free Soli
 
 To run this application, you will need to have Node.js and the Angular CLI installed on your machine. Once you have these dependencies installed, clone this repository and run the following command in the project directory:
 
-bashCopy code
-
 `npm install`
 
 ## Usage
 
 To start the application, run the following command in the project directory:
-
-bashCopy code
 
 `ng serve`
 
