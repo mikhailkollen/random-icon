@@ -20,16 +20,13 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'random-icon'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('random-icon');
-  });
-
-  it('should render title', () => {
+  it('should render the button and the icon container', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('random-icon app is running!');
+    const button = compiled.querySelector('button');
+    const iconContainer = compiled.querySelector('.icon-container');
+    expect(button).toBeTruthy();
+    expect(iconContainer).toBeTruthy();
   });
 });
