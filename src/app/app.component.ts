@@ -8,7 +8,7 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
   selector: 'app-root',
   template: `
       <div class="icon-container"></div>
-      <button (click)="generateRandomIcon()">Get Random Icon</button>
+      <button (click)="generateRandomIconDelayed()">Get Random Icon</button>
   `
 })
 export class AppComponent implements OnInit {
@@ -29,7 +29,6 @@ export class AppComponent implements OnInit {
   }
 
   generateRandomIcon() {
-    setTimeout(() => {
       const randomIconName: IconName = this.fasArray[Math.floor(Math.random() * this.fasArray.length)] as IconName;
       const randomIcon = icon({ prefix: 'fas', iconName: randomIconName });
       const iconElement = randomIcon.node[0];
@@ -37,7 +36,12 @@ export class AppComponent implements OnInit {
       if (this.iconContainer) {
         this.iconContainer.innerHTML = iconElement.outerHTML;
       }
-    }
-      , 3000);
+    
+  }
+
+  generateRandomIconDelayed() {
+    setTimeout(() => {
+      this.generateRandomIcon();
+    }, 3000);
   }
 }
